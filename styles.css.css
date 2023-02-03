@@ -1,0 +1,165 @@
+.container {
+  border-radius: 35px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-image: url("images/sunny.jpg");
+  background-size: cover;
+}
+
+body {
+  font-family: "Montserrat";
+  color: white;
+}
+.main-city {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-bar {
+  position: relative;
+  right: 0;
+  top: 10px;
+  float: right;
+}
+
+#city {
+  border-radius: 20px;
+  border: 3px solid white;
+  background: transparent;
+  max-width: 200px;
+}
+
+#search-button {
+  padding: 5px 8px;
+  color: white;
+  background-color: #03045e;
+  border: none;
+  border-radius: 25px;
+  transition: all 200ms ease-in-out;
+}
+
+#search-button:hover {
+  color: #03045e;
+  border: 2px solid #03045e;
+  background-color: transparent;
+}
+
+.fa-solid.fa-magnifying-glass {
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+.fa-solid.fa-magnifying-glass:hover {
+  color: #03045e;
+}
+
+::placeholder {
+  padding: 3px 5px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.main-number {
+  font-size: 60px;
+  font-weight: 300;
+  position: relative;
+  top: -10px;
+}
+
+.weather-description {
+  position: relative;
+  top: -18px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.fa-solid,
+.fa-regular {
+  font-size: 30px;
+}
+
+.fa-magnifying-glass {
+  font-size: 20px;
+}
+
+.col {
+  text-align: center;
+  line-height: 2.5;
+}
+
+.col-2 {
+  display: inline;
+
+  max-width: 100px;
+}
+
+.row-celsius {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#main-temp {
+  font-size: 50px;
+  position: relative;
+  top: -8px;
+  bottom: -5px;
+  left: 25px;
+}
+
+.unit-container {
+  max-width: 50px;
+  display: inline;
+  position: relative;
+  top: -20px;
+  left: 40px;
+}
+
+#celsius,
+#farenheit {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 200ms all ease-in-out;
+}
+
+#celsius:hover {
+  color: #03045e;
+}
+
+#farenheit:hover {
+  color: #03045e;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  color: #1a78b5;
+  border: none;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 35px;
+  background-color: white;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: #1a78b5;
+  color: white;
+  cursor: pointer;
+}

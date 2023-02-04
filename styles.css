@@ -103,37 +103,27 @@ h3 {
   line-height: 2.5;
 }
 
-.col-2 {
+.col-4 {
   display: inline;
-  max-width: 300px;
+  max-width: 500px;
 }
 
-.row-celsius {
-  max-width: 600px;
-  margin: 0 auto;
-}
+
 
 #main-temp {
   font-size: 50px;
   position: relative;
-  top: -8px;
-  bottom: -5px;
-  left: 25px;
+  bottom: 10px;
+  
 }
 
-.unit-container {
-  max-width: 50px;
-  display: inline;
-  position: relative;
-  top: -20px;
-  left: 40px;
-}
 
 #celsius,
 #farenheit {
-  color: white;
+  
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
   transition: 200ms all ease-in-out;
 }
 
@@ -144,6 +134,15 @@ h3 {
 #farenheit:hover {
   color: #03045e;
 }
+
+#celsius:visited{
+color: white;
+}
+
+#farenheit:visited{
+  color: white;
+}
+
 
 button {
   display: block;
@@ -163,3 +162,38 @@ button:hover {
   color: white;
   cursor: pointer;
 }
+
+.celsius{
+  margin: 15px;
+}
+
+.list{
+  list-style: none;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.unit-container{
+  padding-top: 10px;
+}
+
+
+
+.end{
+  margin: 0 auto;
+  text-align: center;
+}
+ #end-link{
+  text-decoration: none;
+  color: #03045e;
+ }
+
+ .end-text{
+  display: block;
+  padding: 20px;
+ }
+
+ #main-image{
+  position: relative;
+  top: -20px;
+ }

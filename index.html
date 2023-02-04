@@ -42,29 +42,31 @@
       <div class="main-city">
         <h1>
           Napa
-        </h1>
-        <div class="row-celsius">
-          <div class="col-2">
+        </h1></div>
+        <div class="row celsius">
+          <div class="col-4">
+            <ul class="list">
+            <li>Humidity: <span id="humidity">12</span></li>
+            <li>Wind: <span id="wind">12</span>km/h</li>
+            </ul>
+          </div>
+          <div class="col-4">
             <strong><span id="main-temp">12°C</span></strong>
+            <br>
+            <img id="main-image" alt="-"src="http://openweathermap.org/img/wn/02d@2x.png">
             <br>
             <span class="weather-description">Sunny</span> 
           </div>
-          <div class="col-2">
+          <div class="col-4">
             <div class="unit-container">
               <span class="units"><a href="#" id="celsius">C°</a></span>
               <span class="units"><a href="#" id="farenheit">F°</a></span>
             </div>
           </div>
         
-         <div class="col-2">
-            <ul class="list">
-            <li>Precipitation: 12</li>
-            <li>Humidity:</li>
-            <li>Wind</li>
-            </ul>
-          </div>
+        
       </div>
-    </div>
+    
       <button>
         Current Location
       </button>
@@ -112,8 +114,14 @@
           </div>
         </div>
       </div>
+      <footer>
+      <div class="end">
+        <small class="end-text"><a href="https://github.com/saywachuji/Weather-App" target="_blank" id="end-link">Open source code</a> by Saywa Chuji</small>
+      </div>
+    </footer>
     </div>
   
+   
     <script src="javascript.js"></script>
   </body>
   </body>

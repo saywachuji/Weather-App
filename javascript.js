@@ -37,6 +37,8 @@ function displayWeather(response) {
   let city = response.data.city;
   let description = document.querySelector(".weather-description");
   let weatherDescription = response.data.condition.description;
+  let firstLetter = weatherDescription.charAt();
+  firstLetter.toUpperCase()
   let icon = document.querySelector("#main-image");
 
   celsiusTemperature = response.data.temperature.current;

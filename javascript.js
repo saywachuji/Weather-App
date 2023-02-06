@@ -37,7 +37,7 @@ function displayWeather(response) {
   let city = response.data.city;
   let description = document.querySelector(".weather-description");
   let weatherDescription = response.data.condition.description;
-  let firstLetter = weatherDescription.charAt();
+  let firstLetter = weatherDescription.charAt(0);
   firstLetter.toUpperCase()
   let icon = document.querySelector("#main-image");
 

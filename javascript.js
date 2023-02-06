@@ -26,32 +26,73 @@ if (hour < 10) {
 let dateText = document.querySelector(".today-date");
 dateText.innerHTML = `${day} ${todayDay}, ${hour}:${minutes}`;
 
+
+
+
 //Function displays the current info of the city searched.
 function displayWeather(response) {
-  let temperature = Math.floor(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let mainTemp = document.querySelector("#main-temp");
   let h1 = document.querySelector("h1");
-  let city = response.data.name;
+  let city = response.data.city;
   let description = document.querySelector(".weather-description");
-  let weatherDescription = response.data.weather[0].main;
+  let weatherDescription = response.data.condition.description;
   let icon = document.querySelector("#main-image");
 
-  celsiusTemperature = response.data.main.temp;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  celsiusTemperature = response.data.temperature.current;
+  document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  icon.setAttribute("alt", response.data.weather[0].main);
+  icon.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+  icon.setAttribute("alt", response.data.condition.description);
   h1.innerHTML = city;
   mainTemp.innerHTML = `${temperature}°C`;
   description.innerHTML = weatherDescription;
-}
 
+  getForecast(response.data.coordinates)
+};
+
+//FUNCTION to convert the time is seconds to days
+function formatDay(timestamp){
+let date = new Date(timestamp * 1000)
+let day = date.getDay();
+let days = ["Sun", "Mon","Tues", "Wed", "Thur", "Fri", "Sat"]
+return days[day]
+};
+
+function displayForecast(response){
+
+  let forecastData = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+ 
+ forecastData.forEach(function(forecastDay, index){
+  if (index < 5){ 
+  forecastHTML = forecastHTML + 
+  `<div class="col">
+  <div class="days">${formatDay(forecastDay.time)}</div>
+ <img alt="-"src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png">
+  <div class="degrees">
+  <span>${Math.round(forecastDay.temperature.maximum)}° </span><span id="min-temp">${Math.round(forecastDay.temperature.minimum)}°</span>
+  </div>
+</div>`;}
+ });
+   
+forecastElement.innerHTML = forecastHTML
+
+};
+
+//FORECAST function gets lat and lon and the connects to the displayWeather function. 
+function getForecast(coordinates){
+let apiKey = "c635taf5ao3b501623e4fa7bf7fc0f02";
+let apiUrl= `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}`;
+axios.get(apiUrl).then(displayForecast)
+}
 
 //FUNCTION That searches for the city and is connected to the display function.  
 function search(city) {
-  let apiKey = "5fbbad2bef547e3baeb40fbbf78a01ea";
+  let apiKey = "c635taf5ao3b501623e4fa7bf7fc0f02";
   let units = "metric";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(url).then(displayWeather);
 }
 
@@ -72,8 +113,8 @@ function currentWeather(position) {
   let longitude = position.coords.longitude;
   let lat = latitude.toFixed(2);
   let lon = longitude.toFixed(2);
-  let apiKey = "5fbbad2bef547e3baeb40fbbf78a01ea";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "c635taf5ao3b501623e4fa7bf7fc0f02";
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
   axios.get(url).then(displayWeather);
 }
 
@@ -91,6 +132,8 @@ const convertCelsius = (event) =>{
   event.preventDefault();
   let temperatureElement = document.querySelector("#main-temp");
 temperatureElement.innerHTML = Math.floor(celsiusTemperature) + "°C";
+farenheit.classList.remove("active")
+celsius.classList.add("active")
 }
 const convertFarenheit = (event) =>{
 event.preventDefault();
@@ -107,3 +150,4 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertCelsius)
 
 let celsiusTemperature = null; 
+

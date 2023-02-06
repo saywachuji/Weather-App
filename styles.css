@@ -3,13 +3,14 @@
   max-width: 800px;
   margin: 50px auto;
   padding: 30px;
-  background-image: url("images/sunny.jpg");
+  background-image: url("https://springfieldeducation.org/wp-content/uploads/2018/09/wallpaper-wiki-plain-blue-background-wallpaper-hd-pic-wpe006182.jpg");
   background-size: cover;
 }
 
 body {
   font-family: "Montserrat";
   color: white;
+  background-image: url("https://springfieldeducation.org/wp-content/uploads/2018/09/wallpaper-wiki-plain-blue-background-wallpaper-hd-pic-wpe006182.jpg");
 }
 .main-city {
   text-align: center;
@@ -17,7 +18,7 @@ body {
 }
 
 .row {
-  margin: 0 auto;
+
   text-align: center;
 }
 
@@ -135,11 +136,11 @@ h3 {
   color: #03045e;
 }
 
-#celsius:visited{
+#celsius:active{
 color: white;
 }
 
-#farenheit:visited{
+#farenheit:active{
   color: white;
 }
 
@@ -196,4 +197,12 @@ button:hover {
  #main-image{
   position: relative;
   top: -20px;
+ }
+
+ .active{
+  color: white;
+ }
+
+ #min-temp{
+  color: orange;
  }

@@ -210,3 +210,7 @@ li{
  #min-temp{
   color: orange;
  }
+
+ .weather-description{
+  text-transform: capitalize;
+ }

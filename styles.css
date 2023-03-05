@@ -40,9 +40,10 @@ body {
   padding: 5px 8px;
   color: white;
   background-color: #03045e;
-  border: none;
+  border: 2px solid #03045e;
   border-radius: 25px;
   transition: all 200ms ease-in-out;
+  margin-left: 5px;
 }
 
 #search-button:hover {
@@ -51,14 +52,6 @@ body {
   background-color: transparent;
 }
 
-.fa-solid.fa-magnifying-glass {
-  color: white;
-  transition: all 200ms ease-in-out;
-}
-
-.fa-solid.fa-magnifying-glass:hover {
-  color: #03045e;
-}
 
 ::placeholder {
   padding: 3px 5px;
@@ -90,15 +83,6 @@ h3 {
   font-size: 20px;
 }
 
-.fa-solid,
-.fa-regular {
-  font-size: 30px;
-}
-
-.fa-magnifying-glass {
-  font-size: 20px;
-}
-
 .col {
   text-align: center;
   line-height: 2.5;
@@ -123,6 +107,7 @@ h3 {
 #farenheit {
   
   text-decoration: none;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   transition: 200ms all ease-in-out;
